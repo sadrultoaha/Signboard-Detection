@@ -1,4 +1,4 @@
-# Automatic Signboard Detection using SegmentationAlgorithm and Appropriate RoI Proposals
+# Automatic Signboard Detection using Segmentation Algorithm and Appropriate RoI Proposals
 By Md. Sadrul Islam Toaha, Sakib Bin Asad, Chowdhury Rafeed Rahman, S. M. Shahriar Haque, Mahfuz Ara Proma, Md. Ahsan Habib Shuvo, TashinAhmed, Md. Amimul Basher
 
 ## Introduction
