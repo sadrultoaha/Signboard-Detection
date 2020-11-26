@@ -14,14 +14,15 @@ This repository contains code for signboard detection which will return the segm
 ### 1. Installation
 
 #### Clone the repo.
-```bash
+Visit [Google Colab](https://colab.research.google.com)), and 
+```
 git clone https://github.com/sadrultoaha/Signboard-Detection.git
 cd Signboard-Detection
 ```
 #### Install the requirements.
 make sure that you have `Tensorflow==1.15.2` and `Keras==2.2.4` installed. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
-```bash
-pip install -r requirements.txt
+```
+!pip install -r requirements.txt
 ```
 ### 2. Usage.
 
@@ -33,14 +34,6 @@ To run the signboard model on your desired test data, create a folder and store 
 ```bash
 python detect.py -test_file_path Signboard-Detection/Test Data -output_csv output.csv -output_zip result.zip
 ```
-Arguments Instruction:
-* -test_file_path: Path to the testing images folder, i.e., Path to the Public test data, Path to the Custom test data.
-* -output_csv: Path to output the predicted localization and classification details.
-* -output_zip: Path to output the segmented signboards on input images.
-
-## Test Output
-![image](https://user-images.githubusercontent.com/16709991/100394939-1fe91380-3069-11eb-845a-31f55fbbe99e.png)
-
 
 ## Guideline for Local Environment
 
@@ -64,10 +57,10 @@ To run the signboard model on SVSO test data, download the test dataset from her
 To run the signboard model on your desired test data, create a folder and store your own custom test dataset inside the folder.
 #### Run the signboard model
 ```bash
-python detect.py -test_file_path Signboard-Detection/Test Data -output_csv output.csv -output_zip result.zip
+python detect.py -test_file_path "Test Data" -output_csv output.csv -output_zip result.zip
 ```
 Arguments Instruction:
-* -test_file_path: Path to the testing images folder, i.e., Path to the Public test data, Path to the Custom test data.
+* -test_file_path: Path to the testing images folder, i.e., Path to the Public test data or Path to the Custom test data.
 * -output_csv: Path to output the predicted localization and classification details.
 * -output_zip: Path to output the segmented signboards on input images.
 
