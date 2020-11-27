@@ -68,9 +68,9 @@ def main():
       
     st = time.time()
     Max_boxes = 300
-    rpn_ov_thresh = 0.9  # 0.7 or 0.3
-    nms_ov_thresh = 0.2 # 0.5 or 0.3
-    bbox_threshold = 0.85 #0.7 # 0.5
+    rpn_ov_thresh = 0.9 
+    nms_ov_thresh = 0.2 
+    bbox_threshold = 0.7 
     num_features = 512
     input_shape_img = (None, None, 3)
     input_shape_features = (None, None, num_features)
