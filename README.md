@@ -7,7 +7,7 @@ problem by developing an automatic signboard detection system. While signboard d
 
 This repository contains code for signboard detection which will return the segmented region of a signboard with localization details automatically.
 ## Architecture
-![image](https://user-images.githubusercontent.com/16709991/100394977-4c049480-3069-11eb-8414-2e8422709086.png)
+![image](https://user-images.githubusercontent.com/16709991/100399693-eff83b00-307d-11eb-9a33-461ba104158c.png)
 
 ## Guideline for Google Colab Environment
 
@@ -61,7 +61,7 @@ python detect.py -test_file_path "Test Data" -output_csv output.csv -output_zip 
 #### Run the signboard model on Custom test data
 To run the signboard model on your desired test data, set the test_file_path to the your own custom test dataset path.
 ```bash
-python detect.py -test_file_path "your_test_data_path" -output_csv output.csv -output_zip result.zip
+python detection.py -test_file_path "your_test_data_path" -output_csv output.csv -output_zip result.zip
 ```
 
 Arguments Instruction:
