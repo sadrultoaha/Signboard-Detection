@@ -3,7 +3,7 @@ By Md. Sadrul Islam Toaha, Sakib Bin Asad, Chowdhury Rafeed Rahman, S. M. Shahri
 
 ## Introduction
 <!---**Automatic** Signboard Detection is based on [paper](https://arxiv.org/pdf/2003.01936.pdf), in this paper, we have solved the first step of auto establishment annotation problem by developing an automatic signboard detection system.-->
-**Automatic** signboard detection in a developing country is a difficult task due to its challenging urban features. To approach this problem, we introduce a robust model with a new signboard [dataset](https://drive.google.com/drive/folders/1LQCgF3U-hPL46WLkq1dX8WJzRBSvCGga?usp=sharing). The signboard detection model is based on Faster R-CNN architecture including a smart proposal box generator algorithm and specialized pretrained technique.
+**Automatic** signboard detection in a developing or less developed city is a difficult task due to its challenging urban features. To approach this problem, we introduce a robust model with a new signboard [dataset](https://drive.google.com/drive/folders/1LQCgF3U-hPL46WLkq1dX8WJzRBSvCGga?usp=sharing). The signboard detection model is based on Faster R-CNN architecture including a smart proposal box generator algorithm and specialized pretrained techniques.
 
 **This repository contains code for signboard detection which will return the segmented region of a signboard with localization details automatically.**
 ## Architecture
