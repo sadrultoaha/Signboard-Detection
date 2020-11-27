@@ -26,14 +26,16 @@ Visit [Google Colab](https://colab.research.google.com), and clone the `detectio
 
 #### Run the signboard model on SVSO test data
 * Set the required path as follows and run all the notebook cells.
-```test_file_path = 'Test Data'
+```
+test_file_path = 'Test Data'
 output_csv = 'output.csv'
 output_zip = 'result.zip'
 ```
 #### Run the signboard model on Custom test data
 * Upload and connect your custom dataset into Google Colab environment.
 * Set the required path as follows and run all the notebook cells.
-```test_file_path = 'your_test_data_path'
+```
+test_file_path = 'your_test_data_path'
 output_csv = 'output.csv'
 output_zip = 'result.zip'
 ```
