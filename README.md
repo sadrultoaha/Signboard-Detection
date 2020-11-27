@@ -14,25 +14,28 @@ This repository contains code for signboard detection which will return the segm
 ### 1. Installation
 
 #### Clone the repo.
-Visit [Google Colab](https://colab.research.google.com)), and 
-```
-git clone https://github.com/sadrultoaha/Signboard-Detection.git
-cd Signboard-Detection
-```
+
+Visit [Google Colab](https://colab.research.google.com)), and clone the "detection.ipynb" file from https://github.com/sadrultoaha/Signboard-Detection.git
+
 #### Install the requirements.
-make sure that you have `Tensorflow==1.15.2` and `Keras==2.2.4` installed. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
 ```
-!pip install -r requirements.txt
+%tensorflow_version 1.x
+!pip install Keras==2.2.4
 ```
 ### 2. Usage.
 
-#### SVSO test data
-To run the signboard model on SVSO test data, download the test dataset from here : [Download](https://drive.google.com/drive/folders/1G47_PsJJWd0CleXynYqZuLWDPoNu2CCJ?usp=sharing).
-#### Custom test data
-To run the signboard model on your desired test data, create a folder and store your own custom test dataset inside the folder.
-#### Run the signboard model
-```bash
-python detect.py -test_file_path Signboard-Detection/Test Data -output_csv output.csv -output_zip result.zip
+#### Run the signboard model on SVSO test data
+* Set the required path as follows and run all the notebook cells.
+```test_file_path = 'Test Data'
+output_csv = 'output.csv'
+output_zip = 'result.zip'
+```
+#### Run the signboard model on Custom test data
+* Upload and connect your custom dataset into Google Colab enviornment.
+* Set the required path as follows and run all the notebook cells.
+```test_file_path = 'your_test_data_path'
+output_csv = 'output.csv'
+output_zip = 'result.zip'
 ```
 
 ## Guideline for Local Environment
@@ -51,14 +54,16 @@ pip install -r requirements.txt
 ```
 ### 2. Usage.
 
-#### SVSO test data
-To run the signboard model on SVSO test data, download the test dataset from here : [Download](https://drive.google.com/drive/folders/1G47_PsJJWd0CleXynYqZuLWDPoNu2CCJ?usp=sharing).
-#### Custom test data
-To run the signboard model on your desired test data, create a folder and store your own custom test dataset inside the folder.
-#### Run the signboard model
+#### Run the signboard model on SVSO test data
 ```bash
 python detect.py -test_file_path "Test Data" -output_csv output.csv -output_zip result.zip
 ```
+#### Run the signboard model on Custom test data
+To run the signboard model on your desired test data, set the test_file_path to the your own custom test dataset path.
+```bash
+python detect.py -test_file_path "your_test_data_path" -output_csv output.csv -output_zip result.zip
+```
+
 Arguments Instruction:
 * -test_file_path: Path to the testing images folder, i.e., Path to the Public test data or Path to the Custom test data.
 * -output_csv: Path to output the predicted localization and classification details.
