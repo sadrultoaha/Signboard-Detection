@@ -1,4 +1,4 @@
-# Automatic Signboard Detection and Localization in theContext of Developing and Under Developed CityStreets
+# Automatic Signboard Detection and Localization in the Context of Developing and Under Developed City Streets
 By Md. Sadrul Islam Toaha, Sakib Bin Asad, Chowdhury Rafeed Rahman, S. M. Shahriar Haque, Mahfuz Ara Proma, Md. Ahsan Habib Shuvo, Tashin Ahmed, Md. Amimul Basher
 
 ## Introduction
