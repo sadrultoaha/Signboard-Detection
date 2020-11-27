@@ -72,7 +72,8 @@ Arguments Instruction:
 * -output_zip: Path to output the segmented signboards on input images.
 
 ## Test Output
-![image](https://user-images.githubusercontent.com/16709991/100394939-1fe91380-3069-11eb-845a-31f55fbbe99e.png)
+![image](https://user-images.githubusercontent.com/16709991/100400796-e1ac1e00-3081-11eb-9f15-7ab4d400514d.png)
+
 
 
 
