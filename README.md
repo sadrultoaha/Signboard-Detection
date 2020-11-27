@@ -66,7 +66,7 @@ To run the signboard model on your desired test data, set the test_file_path to 
 python detection.py -test_file_path "your_test_data_path" -output_csv output.csv -output_zip result.zip
 ```
 
-Arguments Instruction:
+Arguments Details:
 * -test_file_path: Path to the testing images folder, i.e., Path to the Public test data or Path to the Custom test data.
 * -output_csv: Path to output the predicted localization and classification details.
 * -output_zip: Path to output the segmented signboards on input images.
