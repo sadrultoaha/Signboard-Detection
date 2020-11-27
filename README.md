@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 #### Run the signboard model on SVSO test data
 ```bash
-python detect.py -test_file_path "Test Data" -output_csv output.csv -output_zip result.zip
+python detection.py -test_file_path "Test Data" -output_csv output.csv -output_zip result.zip
 ```
 #### Run the signboard model on Custom test data
 To run the signboard model on your desired test data, set the test_file_path to the your own custom test dataset path.
