@@ -15,7 +15,7 @@ This repository contains code for signboard detection which will return the segm
 
 #### Clone the repo.
 
-Visit [Google Colab](https://colab.research.google.com)), and clone the "detection.ipynb" file from https://github.com/sadrultoaha/Signboard-Detection.git
+Visit [Google Colab](https://colab.research.google.com), and clone the `detection.ipynb` file from https://github.com/sadrultoaha/Signboard-Detection.git
 
 #### Install the requirements.
 ```
@@ -31,7 +31,7 @@ output_csv = 'output.csv'
 output_zip = 'result.zip'
 ```
 #### Run the signboard model on Custom test data
-* Upload and connect your custom dataset into Google Colab enviornment.
+* Upload and connect your custom dataset into Google Colab environment.
 * Set the required path as follows and run all the notebook cells.
 ```test_file_path = 'your_test_data_path'
 output_csv = 'output.csv'
