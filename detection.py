@@ -157,7 +157,7 @@ def main():
             # Calculate bboxes coordinates on resized image
             for ii in range(P_cls.shape[1]):
                 # Ignore 'bg' class
-                if np.max(P_cls[0, ii, :]) < bbox_threshold or np.argmax(P_cls[0, ii, :]) == (P_cls.shape[2] - 1):
+                if np.max(P_cls[0, ii, :]) < 0.85 or np.argmax(P_cls[0, ii, :]) == (P_cls.shape[2] - 1):
                     continue
                 cls_name = class_mapping[np.argmax(P_cls[0, ii, :])]
                 if cls_name not in bboxes:
