@@ -15,7 +15,7 @@ Automatic **signboard** detection in a developing or less developed city is a di
 
 #### Clone the repo.
 
-Visit [Google Colab](https://colab.research.google.com), and clone the `detection.ipynb` file from https://github.com/sadrultoaha/Signboard-Detection.git
+Visit [Google Colab](https://colab.research.google.com), and clone the `Detection.ipynb` file from https://github.com/sadrultoaha/Signboard-Detection.git
 
 #### Install the requirements.
 ```
