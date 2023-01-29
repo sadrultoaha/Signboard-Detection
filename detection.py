@@ -56,7 +56,7 @@ def main()
     parser.add_argument('-output_csv', default='output.csv',help='Path to output the predicted localization and classification details.')
     parser.add_argument('-output_zip', default='result.zip',help='Path to output the segmented signboards on input images.')
     if not os.path.isfile('signboard_detector.py')
-      gdd.download_file_from_google_drive(file_id='15AjDFahptkJZJS-bKQ8Eb66v1W0i2oxG', dest_path='.Signboard.zip', unzip=True)
+      gdd.download_file_from_google_drive(file_id='16ulg93I5KI9995sza_sUrFCaN06ki6Mo', dest_path='.Signboard.zip', unzip=True)
     #config_file_path = 'signboard_model_vgg_config.pickle'
     #model_file_path = 'signboard_model_frcnn_vgg.hdf5'
     #test_file_path = 'Test'
