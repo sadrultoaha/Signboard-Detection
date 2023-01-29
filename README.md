@@ -19,7 +19,7 @@ Visit [Google Colab](https://colab.research.google.com), and clone the `Detectio
 
 #### Install the requirements.
 ```
-%tensorflow_version 1.x
+%tensorflow_version
 !pip install Keras==2.2.4
 ```
 ### 2. Usage.
