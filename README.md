@@ -10,7 +10,7 @@ Automatic **signboard** detection in a developing or less developed city is a di
 ![image](https://user-images.githubusercontent.com/16709991/100399693-eff83b00-307d-11eb-9a33-461ba104158c.png)
 
 ## Guideline for Google Colab Environment [ Deprecated ]
-## > The Colab Version of the implementation is deprecated as Google Colab no longer supports Tensorflow 1
+> ## The Colab Version of the implementation is deprecated as Google Colab no longer supports Tensorflow 1
 
 ### 1. Installation
 
