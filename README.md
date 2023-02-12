@@ -9,37 +9,6 @@ Automatic **signboard** detection in a developing or less developed city is a di
 ## Architecture
 ![image](https://user-images.githubusercontent.com/16709991/100399693-eff83b00-307d-11eb-9a33-461ba104158c.png)
 
-## Guideline for Google Colab Environment [ Deprecated ]
-> ## The Colab Version of the implementation is deprecated as Google Colab no longer supports Tensorflow 1
-
-### 1. Installation
-
-#### Clone the repo.
-
-Visit [Google Colab](https://colab.research.google.com), and clone the `Detection.ipynb` file from https://github.com/sadrultoaha/Signboard-Detection.git
-
-#### Install the requirements.
-```
-%tensorflow_version
-!pip install Keras==2.2.4
-```
-### 2. Usage.
-
-#### Run the signboard model on SVSO test data
-* Set the required path as follows and run all the notebook cells.
-```
-test_file_path = 'Test'
-output_csv = 'output.csv'
-output_zip = 'result.zip'
-```
-#### Run the signboard model on Custom test data
-* Upload and connect your custom dataset into Google Colab environment.
-* Set the required path as follows and run all the notebook cells.
-```
-test_file_path = 'your_test_data_path'
-output_csv = 'output.csv'
-output_zip = 'result.zip'
-```
 
 ## Guideline for Local Environment
 
@@ -51,10 +20,17 @@ git clone https://github.com/sadrultoaha/Signboard-Detection.git
 cd Signboard-Detection
 ```
 #### Install the requirements.
-make sure that you have `Tensorflow==1.15.2` and `Keras==2.2.4` installed. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
+Make sure that you have `Python <=3.7` installed on your system as the implementation uses `Tensorflow==1.15.2` and `Keras==2.2.4`. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
 ```bash
 pip install -r requirements.txt
 ```
+
+
+### 3. Signboard detector model weights and required files
+
+Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1Jcq6vEbAiJU9B0YVlQEMKhnIPdM-aThI/view?usp=share_link))
+
+Unzip the 'Signboard_Detector.zip' file and place all the files and folders into the 'Signboard-Detection' directory.
 ### 2. Usage.
 
 #### Run the signboard model on SVSO test data
