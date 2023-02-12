@@ -26,12 +26,12 @@ pip install -r requirements.txt
 ```
 
 
-### 3. Signboard detector model weights and required files
+### 2. Signboard detector model weights and required files
 
 Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1Jcq6vEbAiJU9B0YVlQEMKhnIPdM-aThI/view?usp=share_link))
 
 Unzip the 'Signboard_Detector.zip' file and place all the files and folders into the 'Signboard-Detection' directory.
-### 2. Usage.
+### 3. Usage.
 
 #### Run the signboard model on SVSO test data
 ```bash
