@@ -20,7 +20,7 @@ cd Signboard-Detection
 ```
 
 #### 2. Install the requirements.
-Make sure that you have `Python <=3.7` installed on your system as the implementation uses `Tensorflow==1.15.2` and `Keras==2.2.4`. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
+Make sure that you have `Python <=3.7.0` installed on your system as the implementation uses `Tensorflow==1.15.2` and `Keras==2.2.4`. (see: [Tensorflow installation instructions](https://www.tensorflow.org/install))
 ```bash
 pip install -r requirements.txt
 ```
