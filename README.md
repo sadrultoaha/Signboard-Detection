@@ -25,7 +25,7 @@ Make sure that you have `Python <=3.7` installed on your system as the implement
 pip install -r requirements.txt
 ```
 
-## Signboard detector model weights and required files [**Required**]
+## Signboard detector model weights and code libraries [**Required**]
 
 Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1Jcq6vEbAiJU9B0YVlQEMKhnIPdM-aThI/view?usp=share_link))
 
