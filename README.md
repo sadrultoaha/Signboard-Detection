@@ -1,4 +1,4 @@
-# Automatic Signboard Detection and Localization in Densely Populated Developing Cities
+# Signboard Detection 
 Implementation of paper - [Automatic signboard detection and localization in densely populated developing cities](https://www.sciencedirect.com/science/article/abs/pii/S0923596522001369#preview-section-references)
 
 ## Introduction
