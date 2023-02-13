@@ -11,7 +11,7 @@ Automatic signboard detection in a developing or less developed city is a diffic
 ![Graphical abstract](https://user-images.githubusercontent.com/16709991/218386949-d81448df-deb3-4822-acd4-c4629fcf0c76.jpg)
 
 
-## Installation
+## I. Installation
 
 #### 1. Clone the repo.
 ```bash
@@ -25,13 +25,13 @@ Make sure that you have `Python <=3.7` installed on your system as the implement
 pip install -r requirements.txt
 ```
 
-## Signboard detector model weights and code libraries [**Required**]
+## II. Signboard detector model weights and code libraries [**Required**]
 
 Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1Jcq6vEbAiJU9B0YVlQEMKhnIPdM-aThI/view?usp=share_link))
 
 Unzip the 'Signboard_Detector.zip' file and place all the files and folders into the 'Signboard-Detection' directory.
 
-## Usage
+## III. Usage
 
 #### Run the signboard model on SVSO test data
 ```bash
