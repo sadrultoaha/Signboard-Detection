@@ -13,7 +13,7 @@ from keras import backend as K
 from keras.layers import Input
 from keras.models import Model
 from zipfile import ZipFile	
-
+from Signboard_Detector import signboard_detector as fn
 
 class Config:
 
@@ -30,24 +30,25 @@ def main():
     parser.add_argument('-output_zip', default='result.zip',help='Path to output the segmented signboards on input images.')
 
     args = parser.parse_args()
-
-    from Signboard_Detector import signboard_detector as fn
+    
     with open(args.config_file_path, 'rb') as f_in:
       C = pickle.load(f_in)
       
     st = time.time()
     Max_boxes = 300
-    rpn_ov_thresh = 0.9  # 0.7 or 0.3
-    nms_ov_thresh = 0.2 # 0.5 or 0.3
-    bbox_threshold = 0.85 #0.7 # 0.5
+    rpn_ov_thresh = 0.9  
+    nms_ov_thresh = 0.2
+    bbox_threshold = 0.85
     num_features = 512
     input_shape_img = (None, None, 3)
     input_shape_features = (None, None, num_features)
     img_input = Input(shape=input_shape_img)
     roi_input = Input(shape=(C.num_rois, 4))
     feature_map_input = Input(shape=input_shape_features)
+    
     # define the base network (VGG here, can be Resnet50, Inception, etc)
     shared_layers = fn.VGG16_BN(img_input,conv_dropout=0.1, activation='relu')
+    
     # define the RPN, built on the base layers
     num_anchors = len(C.anchor_box_scales) * len(C.anchor_box_ratios)
     rpn_layers = fn.rpn_layer(shared_layers, num_anchors)
@@ -55,10 +56,13 @@ def main():
     model_rpn = Model(img_input, rpn_layers)
     model_classifier_only = Model([feature_map_input, roi_input], classifier)
     model_classifier = Model([feature_map_input, roi_input], classifier)
+    
     # Switch key value for class mapping
     class_mapping = C.class_mapping
+    
     #class_mapping = cm
     class_mapping = {v: k for k, v in class_mapping.items()}
+    
     #print(class_mapping)
     class_to_color = {class_mapping[v]: (0, 255, 3) for v in class_mapping}
     print('Loading weights from {}'.format(args.model_file_path))
@@ -79,7 +83,6 @@ def main():
     test_imgs = os.listdir(args.test_file_path)
     imgs_path = []
     for i in range(len(test_imgs)):
-        #idx = np.random.randint(len(test_imgs))
         imgs_path.append(test_imgs[i])
     all_imgs = []
     classes = {}
@@ -93,20 +96,23 @@ def main():
         img = cv2.imread(filepath)
         wid, hei, _ = img.shape
         if wid !=1000 and hei !=600:
-          #img = img.resize((1000, 600), Image.ANTIALIAS)
           img = cv2.resize(img, (1000, 600), interpolation=cv2.INTER_CUBIC)
         X, ratio = fn.format_img(img, C)
         X = np.transpose(X, (0, 2, 3, 1))
+        
         # get output layer Y1, Y2 from the RPN and the feature maps F
         # Y1: y_rpn_cls
         # Y2: y_rpn_regr
         [Y1, Y2, F] = model_rpn.predict(X)
+        
         # Get bboxes by applying NMS 
         # R.shape = (300, 4)
         R = fn.rpn_to_roi(Y1, Y2, C, K.image_data_format(),overlap_thresh=0.9)
+        
         # convert from (x1,y1,x2,y2) to (x,y,w,h)
         R[:, 2] -= R[:, 0]
         R[:, 3] -= R[:, 1]
+        
         # apply the spatial pyramid pooling to the proposed regions
         bboxes = {}
         probs = {}
@@ -123,6 +129,7 @@ def main():
                 ROIs_padded[0, curr_shape[1]:, :] = ROIs[0, 0, :]
                 ROIs = ROIs_padded
             [P_cls, P_regr] = model_classifier_only.predict([F, ROIs])
+            
             # Calculate bboxes coordinates on resized image
             for ii in range(P_cls.shape[1]):
                 # Ignore 'bg' class
@@ -145,12 +152,14 @@ def main():
                     pass
                 bboxes[cls_name].append([C.rpn_stride*x, C.rpn_stride*y, C.rpn_stride*(x+w), C.rpn_stride*(y+h)])
                 probs[cls_name].append(np.max(P_cls[0, ii, :]))
+                
         all_dets = []
         for key in bboxes:
             bbox = np.array(bboxes[key])
             new_boxes, new_probs = fn.non_max_suppression_fast(bbox, np.array(probs[key]), overlap_thresh=nms_ov_thresh,max_boxes=Max_boxes)
             for jk in range(new_boxes.shape[0]):
                 (x1, y1, x2, y2) = new_boxes[jk,:]
+                
                 # Calculate real coordinates on original image
                 (real_x1, real_y1, real_x2, real_y2) = fn.get_real_coordinates(ratio, x1, y1, x2, y2)
                 cv2.rectangle(img,(real_x1, real_y1), (real_x2, real_y2), (int(class_to_color[key][0]), int(class_to_color[key][1]), int(class_to_color[key][2])),4)
@@ -172,8 +181,7 @@ def main():
                       'Confidence_Score':round(100*new_probs[jk],2)
                       }
                 record_df = record_df.append(new_row, ignore_index=True)
-        #print('Elapsed time = {}'.format(time.time() - st))
-        #print(all_dets)
+                
         plt.figure(figsize=(10,10))
         plt.grid()
         plt.imshow(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
@@ -181,15 +189,12 @@ def main():
         new_filename = 'Output_' + img_name
         plt.imsave(new_filename, cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
         zipObj.write(new_filename)
-        #os.rename(new_filename,'temp.png')
+
     print('Total Execution time = {}[Sec]'.format(round(time.time() - st),2))
     record_df.to_csv(record_path, index=0)
     zipObj.write(record_path)
     zipObj.close()
     print('Detection complete ! output results have been created and archived into "Result.zip" file\nPlease approve the download.')
-    #if os.path.isfile('Result.zip'):
-    #  files.download("Result.zip")
-
 
 
 if __name__ == "__main__":
