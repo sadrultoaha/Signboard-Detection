@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## II. Signboard detector model weights and code libraries [**Required**]
 
-Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1Jcq6vEbAiJU9B0YVlQEMKhnIPdM-aThI/view?usp=share_link))
+Download model weights and required files from here - (**Download**: [Signboard_Detector.zip](https://drive.google.com/file/d/1YDQIoWNpnhWxgjk3jz4NU7CLhrzIHMVP/view?usp=sharing))
 
 Unzip the 'Signboard_Detector.zip' file and place all the files and folders into the 'Signboard-Detection' directory.
 
